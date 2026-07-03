@@ -1,0 +1,68 @@
+.tabla-productos-holder {
+    background-color: @primary-background-color;
+    padding: 1rem;
+
+    .tabla-productos {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 2px 2px 5px @secondary-background-color;
+        border-radius: 7px;
+        overflow: hidden;
+
+        thead {
+            background-color: @secondary-background-color;
+            color: @secondary-text-color;
+
+            th {
+                text-align: left;
+                padding: 0.75rem 1rem;
+                font-weight: bolder;
+            }
+        }
+
+        tbody {
+            .tabla-productos-fila {
+                background-color: @accent-background-color;
+                background-image: linear-gradient(@accent-background-color, @primary-background-color);
+
+                &:nth-child(even) {
+                    background-image: linear-gradient(darken(@accent-background-color, 5%), @primary-background-color);
+                }
+
+                td {
+                    padding: 0.75rem 1rem;
+                    border-bottom: 1px solid @secondary-background-color;
+                }
+            }
+        }
+    }
+
+    @media (max-width: #break-points[tablet]) {
+        .tabla-productos {
+            thead {
+                display: none;
+            }
+
+            tbody, tr, td {
+                display: block;
+                width: 100%;
+            }
+
+            .tabla-productos-fila {
+                margin-bottom: 0.75rem;
+                border-radius: 7px;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
+
+                &::before {
+                    content: attr(data-label);
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}

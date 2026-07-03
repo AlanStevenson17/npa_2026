@@ -1,0 +1,37 @@
+.hero {
+    background: linear-gradient(
+        135deg,
+        @hero-light,
+        @hero-dark
+    );
+
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn-hero {
+        display: inline-block;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 8px;
+
+        background-color: darken(@hero-color, 10%);
+        color: white;
+
+        transition: 0.3s;
+
+        &:hover {
+            background-color: lighten(@hero-color, 10%);
+        }
+    }
+}

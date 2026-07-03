@@ -1,0 +1,22 @@
+<section class="tabla-productos-holder grid">
+    <div class="row">
+        <div class="col-12">
+            <table class="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Nombre del Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each product-data-set}}
+                    {{> productos this}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
